@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Schedule</title>
+        <link rel="stylesheet" href="css/screen.css" />
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		
+    </head>
+    <body>
+		<div id="wrapper">
+			<h1 id="frisbee_league">Frisbee league</h1>
+	        <article id="league">
+				<nav class="actions">
+					<ul>
+						<li id="filter">
+							<label>What date:</label>
+							
+						</li>
+						<li><button id="showForm">Add new tournament</button></li>
+					</ul>
+				</nav>
+				
+	        	<ul class="tournaments"></ul>
+				
+				<form id="addTournament" action="#" class="form-2">
+					<h1>Add tournament</h1>
+				    <label for="date">Date:</label><input id="date" placeholder="Tournament date" type="text" />
+				    <label for="teamOne">Team:</label><input id="teamOne"  placeholder="Team one" type="text" />
+				    <label for="result">Result:</label><input id="result"  placeholder="Result" type="text" />
+				    <label for="teamTwo">Team:</label><input id="teamTwo"  placeholder="Team two" type="text" />
+				    <div class="clearfix"><input type="submit" id="add" value="Add" /></div>
+				</form>
+	        </article>
+			
+		</div>
+		
+
+        <script id="tournamentTemplate" type="text/template">
+			<h1>Date: <%= date %></h1>
+			<h2>Team: <strong><%= teamOne %></strong></h2>
+			<h2>Result: <strong><%= result %></strong></h2>
+			<h2>Team: <strong><%= teamTwo %></strong></h2>
+			<p><a href="#" class="delete">Delete</a></p>
+        </script>
+		
+		<!-- Libraries -->
+        <script src="js/libs/jquery-1.7.1.min.js"></script>
+        <script src="js/libs/json2.js"></script>
+        <script src="js/libs/underscore-min.js"></script>
+        <script src="js/libs/backbone-min.js"></script>
+
+		<!-- Application -->
+		<script src="js/app/app.js"></script>
+		<script src="js/app/models/tournamentModel.js"></script>
+		<script src="js/app/collections/leagueCollection.js"></script>
+		<script src="js/app/views/tournamentView.js"></script>
+		<script src="js/app/views/leagueView.js"></script>
+		
+        
+    </body>
+</html>
