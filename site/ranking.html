@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Backbone.js Web App</title>
+        <link rel="stylesheet" href="css/Rankingscreen.css" />
+		<link rel="stylesheet" href="css/Rankingstyle.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		
+    </head>
+    <body>
+		<div id="wrapper">
+			<h1 id="frisbee_league">Frisbee league</h1>
+	        <article id="league">
+				<nav class="actions">
+					<ul>
+						<li id="filter">
+							<label>Show:</label>
+							
+						</li>
+						<li><button id="showForm">Add new tournament</button></li>
+					</ul>
+				</nav>
+				<table>
+					<th style="width:190px; text-align:left;">Team</th>
+                    <th style="width:30px; padding:10px;">W</th>
+                    <th style="width:30px; padding:10px;">L</th>
+                    <th style="width:30px; padding:10px;">Sets won</th>
+                    <th style="width:30px; padding:10px;">Sets lost</th>
+                     <th style="width:30px; padding:10px;">+/-</th>                   
+
+                    <th style="width:30px; padding:10px;">Points won</th>
+                    <th style="width:30px; padding:10px;">Points lost</th>
+                    <th style="width:30px; padding:10px;">+/-</th>
+				</table>
+	        	<table id="tournaments">
+					<th style="width:190px; text-align:left;">Team</th>
+                    <th style="width:30px; padding:10px;">W</th>
+                    <th style="width:30px; padding:10px;">L</th>
+                    <th style="width:30px; padding:10px;">Sets won</th>
+                    <th style="width:30px; padding:10px;">Sets lost</th>
+                    <th style="width:30px; padding:10px;">+/-</th>
+                    <th style="width:30px; padding:10px;">Points won</th>
+                    <th style="width:30px; padding:10px;">Points lost</th>
+                    <th style="width:30px; padding:10px;">+/-</th>
+                    <th style="width:30px; padding:10px;"></th>
+
+
+	        	</table>
+				
+				<form id="addTournament" action="#" class="form-2">
+					<h1>Add tournament</h1>
+				    <label for="name">Team:</label><input id="team" placeholder="team" type="text" />
+				    <label for="Win">Win:</label><input id="Win"  placeholder="0" type="text" style="width:50px;"/>
+				    <label for="Lost">Lost:</label><input id="Lost"  placeholder="0" type="text"  style="width:50px; "/>
+				    <label for="Sw">Sets won:</label><input id="Sw"  placeholder="0" type="text"  style="width:50px;"/>
+				    <label for="Sl">Sets lost</label><input id="Sl"  placeholder="0" type="text" style="width:50px;"//>
+				    <label for="Pw">Points won:</label><input id="Pw"  placeholder="0" type="text" style="width:50px;"//>
+				    <label for="Pl">Points lost:</label><input id="Pl"  placeholder="0" type="text" style="width:50px;"//>
+
+					
+					
+				    <div class="clearfix"><input type="submit" id="add" value="Add" /></div>
+				</form>
+	        </article>
+			
+		</div>
+		
+
+        <script id="tournamentTemplate" type="text/template">
+			<td style="width:190px; text-align:left;"><%= team %></td>
+			<td style="width:30px; padding:10px;"><%= Win %></td>
+			<td style="width:25px; padding:10px;"><%= Lost %></td>
+			<td align="center" style="width:60px; padding:10px;"><%= Sw %></td>
+			<td align="center" style="width:60px; padding:10px;"><%= Sl %></td>
+			<td align="center" style="width:20px; padding:10px; background-color:#aaa;"><%= setsaldo %></td>	
+			<td align="center" style="width:60px; padding:10px;"><%= Pw %></td>
+			<td align="center" style="width:70px; padding:10px;"><%= Pl %></td>
+			<td align="center" style="width:20px; padding:10px; background-color:#aaa;"><%= saldo %></td>
+			<td align="center" style="width:30px; padding:10px;"><a href="#" class="delete">Delete</a></td>
+        </script>
+		
+		<!-- Libraries -->
+        <script src="js/libs/jquery-1.7.1.min.js"></script>
+        <script src="js/libs/json2.js"></script>
+        <script src="js/libs/underscore-min.js"></script>
+        <script src="js/libs/backbone-min.js"></script>
+
+		<!-- Application -->
+		<script src="js/app/app.js"></script>
+		<script src="js/app/models/rankingModel.js"></script>
+		<script src="js/app/collections/rankingCollection.js"></script>
+
+		<script src="js/app/views/rankingView.js"></script>
+		<script src="js/app/views/allrankingView.js"></script>
+        
+    </body>
+</html>
